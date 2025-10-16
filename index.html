@@ -91,13 +91,13 @@
     .hero img {
       max-width: 350px;
       border-radius: 12px;
-      box-shadow: 10px 10px 0 var(--accent);
       margin-left: 2rem;
       background: var(--light);
+      box-shadow: none; /* Schatten entfernt */
     }
     section.blue {
       background: var(--primary);
-      padding: 3rem 0;
+      padding: 3rem 4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -113,16 +113,18 @@
     section.blue img {
       width: 300px;
       border-radius: 10px;
-      margin-right: 1.5rem;
+      margin-right: 2.5rem;
       object-fit: cover;
       background: #fff;
     }
     section.blue h2 {
       margin-bottom: 0.5rem;
       font-size: 1.6rem;
+      color: var(--dark);
     }
     section.blue div.text {
       max-width: 600px;
+      color: var(--dark);
     }
     .blue.reverse .inside {
       flex-direction: row-reverse;
@@ -132,10 +134,12 @@
       background: #f4f4f4;
       padding: 4rem 0;
       margin-bottom: 1.5rem;
+      border-radius: 20px; /* abgerundete Ecken */
     }
     .diy h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: var(--dark);
     }
     .diy p {
       max-width: 700px;
@@ -167,31 +171,36 @@
       background: var(--primary);
       color: var(--dark);
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 4rem 0;
-      margin-bottom: 2rem;
+    .gallery-section {
+      max-width: var(--content-max);
+      margin: 0 auto 2rem auto;
+      padding: 0 2rem;
     }
-    .gallery h2 {
-      width: 100%;
-      font-size: 1.8rem;
+    .gallery-section h2 {
+      text-align: center;
       margin-bottom: 2rem;
+      color: var(--dark);
     }
-    .gallery img {
-      width: 30%;
-      margin-bottom: 1.5rem;
+    .gallery-table {
+      margin: 0 auto;
+      border-collapse: separate;
+      border-spacing: 0 15px;
+    }
+    .gallery-table td {
+      padding: 0 16px;
+    }
+    .gallery-table img {
+      width: 160px;
       border-radius: 8px;
-      object-fit: cover;
       background: #fff;
+      display: block;
     }
     .about {
       background: var(--primary);
-      padding: 3rem 0;
+      padding: 3rem 4rem;
       border-radius: 10px;
       margin-bottom: 2rem;
+      color: var(--dark);
     }
     .about .inside {
       display: flex;
@@ -231,13 +240,33 @@
       color: var(--primary);
     }
     @media (max-width: 1300px) {
-      .container { padding: 0 1rem; }
+      .container {
+        padding: 0 1rem;
+      }
     }
     @media (max-width: 900px) {
-      .hero, section.blue .inside, .about .inside { flex-direction: column; text-align: center; }
-      .hero img, section.blue img, .about img { margin: 1.5rem auto 0 auto; }
-      .gallery img { width: 48%; }
-      .hero img, section.blue img, .about img { max-width: 100%; }
+      .hero,
+      section.blue .inside,
+      .about .inside {
+        flex-direction: column;
+        text-align: center;
+      }
+      section.blue,
+      .diy,
+      .about {
+        padding: 2rem 0.5rem;
+      }
+      section.blue .inside,
+      .about .inside {
+        padding: 0;
+      }
+      section.blue img,
+      .about img {
+        margin: 1.5rem auto 0 auto;
+      }
+      .gallery-section {
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
@@ -304,19 +333,17 @@
       </div>
     </section>
 
-<section class="gallery-section">
-  <h2 style="text-align:center; margin-bottom:2rem;">Meisterwerke unserer Kursteilnehmer</h2>
-  <table style="margin:0 auto;">
-    <tr>
-      <td style="padding:0 16px;"><img src="githubtest/gallery_ring1.png" alt="Ring 1" style="width:160px; border-radius:8px;"></td>
-      <td style="padding:0 16px;"><img src="githubtest/gallery_ring2.png" alt="Ring 2" style="width:160px; border-radius:8px;"></td>
-      <td style="padding:0 16px;"><img src="githubtest/gallery_ring3.png" alt="Ring 3" style="width:160px; border-radius:8px;"></td>
-      <td style="padding:0 16px;"><img src="githubtest/gallery_ring4.png" alt="Ring 4" style="width:160px; border-radius:8px;"></td>
-    </tr>
-  </table>
-</section>
-
-</section>
+    <section class="gallery-section">
+      <h2>Meisterwerke unserer Kursteilnehmer</h2>
+      <table class="gallery-table">
+        <tr>
+          <td><img src="githubtest/gallery_ring1.png" alt="Ring 1" /></td>
+          <td><img src="githubtest/gallery_ring2.png" alt="Ring 2" /></td>
+          <td><img src="githubtest/gallery_ring3.png" alt="Ring 3" /></td>
+          <td><img src="githubtest/gallery_ring4.png" alt="Ring 4" /></td>
+        </tr>
+      </table>
+    </section>
 
     <section class="about" id="kontakt">
       <div class="inside">
@@ -346,3 +373,4 @@
   </footer>
 </body>
 </html>
+
