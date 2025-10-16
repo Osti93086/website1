@@ -1,123 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Silberschmied Josef Ehehalt — DIY Ringe</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silberschmied Josef Ehehalt</title>
   <style>
-    :root{--accent:#6b4f3a;--bg:#fff;--muted:#666}
-    *{box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;margin:0;color:#222;background:var(--bg)}
-    header{padding:28px 16px;background:#faf7f4;border-bottom:1px solid #eee}
-    .container{max-width:980px;margin:0 auto;padding:0 16px}
-    .brand{display:flex;gap:16px;align-items:center}
-    .brand h1{font-size:20px;margin:0}
-    nav{margin-left:auto}
-    nav a{color:var(--accent);text-decoration:none;margin-left:12px;font-weight:600}
+    :root {
+      --primary: #a0d8ff;
+      --dark: #222;
+      --light: #fff;
+      --muted: #555;
+      --accent: #7a7a7a;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background: var(--light);
+    }
+    header img {
+      height: 60px;
+      width: auto;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem 5%;
+      background: var(--light);
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-text ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .hero-text li::before {
+      content: '✔';
+      margin-right: 8px;
+      color: var(--dark);
+    }
+    .hero-text a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--dark);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .hero img {
+      max-width: 350px;
+      border-radius: 12px;
+      box-shadow: 10px 10px 0 var(--accent);
+    }
 
-    .hero{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:36px 0;align-items:center}
-    .hero h2{font-size:32px;margin:0 0 12px}
-    .hero p{margin:0 0 18px;color:var(--muted)}
-    .cta{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--accent);color:white;text-decoration:none}
+    section.blue {
+      background: var(--primary);
+      padding: 3rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+    section.blue img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 1.5rem;
+    }
+    section.blue h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+    }
 
-    .gallery{display:flex;flex-wrap:wrap;gap:12px}
-    .gallery img{width:calc(33.333% - 8px);height:140px;object-fit:cover;border-radius:8px}
+    .diy {
+      text-align: center;
+      background: #f4f4f4;
+      padding: 4rem 5%;
+    }
+    .diy h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .diy img {
+      max-width: 500px;
+      width: 100%;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    .diy button {
+      background: var(--dark);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-    section.card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);margin:18px 0}
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 4rem 5%;
+    }
+    .gallery h2 {
+      width: 100%;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    .gallery img {
+      width: 30%;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+    }
 
-    .contact{display:flex;gap:24px;align-items:center}
-    .contact .info{line-height:1.4}
-    footer{padding:18px 0;color:var(--muted);font-size:14px}
+    .about {
+      background: var(--primary);
+      padding: 3rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+    .about img {
+      width: 250px;
+      border-radius: 8px;
+      margin-right: 1.5rem;
+    }
+    .about p {
+      max-width: 600px;
+    }
 
-    @media(max-width:880px){.hero{grid-template-columns:1fr;}.gallery img{width:48%}}
-    @media(max-width:520px){.gallery img{width:100%}}
+    footer {
+      background: var(--dark);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 2rem 5%;
+    }
+    footer div {
+      flex: 1 1 200px;
+      margin-bottom: 1rem;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+    @media(max-width:768px) {
+      .hero, section.blue, .about {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img, section.blue img, .about img {
+        margin: 1rem 0;
+      }
+      .gallery img {
+        width: 48%;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container brand">
-      <div>
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><rect width='100%' height='100%' rx='10' fill='%236b4f3a'/></svg>" alt="Logo" width="56" height="56">
-      </div>
-      <div>
-        <h1>Silberschmied Josef Ehehalt</h1>
-        <div style="color:var(--muted);font-size:13px">Schmuck selbst schmieden · DIY Ring Workshop</div>
-      </div>
-      <nav>
-        <a href="#workshop">Workshop</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </div>
+    <img src="https://via.placeholder.com/80x80" alt="Logo">
+    <nav>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#home">Home</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h2>INDIVIDUELL Handgefertigte Ringe</h2>
-        <p>Servus — ich bin der Sepp. Ich fertige Schmuck in 100% Handarbeit. Jedes Stück ist ein Unikat und entsteht mit Liebe zum Detail.</p>
-        <p>In meinen DIY-Workshops kannst du unter Anleitung deinen eigenen Ring schmieden — ohne Vorkenntnisse.</p>
-        <a class="cta" href="#kontakt">Jetzt anfragen</a>
-      </div>
-      <div>
-        <img src="https://silberschmiedje.com/wp-content/uploads/placeholder.jpg" alt="Ringe" style="width:100%;height:100%;max-height:360px;object-fit:cover;border-radius:12px">
-      </div>
-    </section>
-
-    <section class="card">
-      <h3>Die Herstellung</h3>
-      <p>Mit traditionellen Verfahren und Werkzeugen werden die Ringe gefertigt. Wir verwenden Silber, Gold, Platin und bei Bedarf Edelsteine.</p>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Silberschmied Josef Ehehalt</h1>
       <ul>
-        <li>Individuelle Beratung</li>
-        <li>Einzelstücke nach Wunsch (Metall, Größe, Form)</li>
-        <li>Workshops für Paare, Freunde und Gruppen</li>
+        <li>Schmuck selbst schmieden</li>
+        <li>DIY Ring Workshop</li>
+        <li>Selbstgemacht für deine Liebsten</li>
       </ul>
-    </section>
+      <a href="#">Individuell handgefertigte Ringe</a>
+    </div>
+    <img src="https://via.placeholder.com/350x250" alt="Ringe">
+  </section>
 
-    <section id="galerie" class="card">
-      <h3>Meisterwerke unserer Kursteilnehmer</h3>
-      <div class="gallery">
-        <img src="https://silberschmiedje.com/wp-content/uploads/2024/01/ring1.jpg" alt="Ring 1">
-        <img src="https://silberschmiedje.com/wp-content/uploads/2024/01/ring2.jpg" alt="Ring 2">
-        <img src="https://silberschmiedje.com/wp-content/uploads/2024/01/ring3.jpg" alt="Ring 3">
-        <img src="https://silberschmiedje.com/wp-content/uploads/2024/01/ring4.jpg" alt="Ring 4">
-        <img src="https://silberschmiedje.com/wp-content/uploads/2024/01/ring5.jpg" alt="Ring 5">
-        <img src="https://silberschmiedje.com/wp-content/uploads/2024/01/ring6.jpg" alt="Ring 6">
-      </div>
-    </section>
+  <section class="blue">
+    <img src="https://via.placeholder.com/300x200" alt="Schmied">
+    <div>
+      <h2>Servus</h2>
+      <p>Ich bin der Sepp, leidenschaftlicher Künstler mit jahrelanger Erfahrung. Ich mache Schmuck aus 100% Handarbeit. Jedes Stück ist ein Unikat und entsteht mit Liebe zum Detail.</p>
+    </div>
+  </section>
 
-    <section id="workshop" class="card">
-      <h3>Do-it-yourself</h3>
-      <p>Stellen Sie gemeinsam mit mir ein einzigartiges Schmuckstück her und lernen Sie einen Teil meines Handwerks kennen. Keine Vorkenntnisse nötig — garantiertes Ergebnis.</p>
-    </section>
+  <section class="blue">
+    <div>
+      <h2>Die Herstellung</h2>
+      <p>Mithilfe traditioneller Verfahren und Werkzeuge werden die Ringe gefertigt. Alle meine Ringe sind Einzelstücke und können nach deinen eigenen Wünschen angepasst werden.</p>
+    </div>
+    <img src="https://via.placeholder.com/300x200" alt="Werkbank">
+  </section>
 
-    <section id="kontakt" class="card">
-      <h3>Kontakt</h3>
-      <div class="contact">
-        <div class="info">
-          <strong>Telefon:</strong> 09482 3442<br>
-          <strong>E-Mail:</strong> <a href="mailto:Silberschmiedsepp@gmail.com">Silberschmiedsepp@gmail.com</a><br>
-          <strong>Adresse:</strong> Ettersdorf 24A, 93109 Wiesent
-n        </div>
-        <div>
-          <form onsubmit="alert('Formular gesendet — dies ist ein Demo.');return false;" style="display:flex;flex-direction:column;gap:8px;min-width:220px">
-            <input placeholder="Name" required style="padding:10px;border-radius:8px;border:1px solid #ddd">
-            <input placeholder="E-Mail" type="email" required style="padding:10px;border-radius:8px;border:1px solid #ddd">
-            <textarea placeholder="Nachricht" rows="4" style="padding:10px;border-radius:8px;border:1px solid #ddd"></textarea>
-            <button style="padding:10px;border-radius:8px;border:0;background:var(--accent);color:#fff">Nachricht senden</button>
-          </form>
-        </div>
-      </div>
-    </section>
+  <section class="diy">
+    <h2>Do-it-yourself</h2>
+    <p>Stellen Sie gemeinsam mit mir ein einzigartiges Schmuckstück her. Lernen Sie mein Handwerk kennen und erschaffen Sie Ihr eigenes Unikat.</p>
+    <img src="https://via.placeholder.com/500x300" alt="Werkzeug">
+    <button>Anrufen</button>
+    <div style="margin-top:1rem; color:var(--muted)">
+      keine Preise nur Spenden · Garantiertes Ergebnis · Ohne Vorkenntnisse
+    </div>
+  </section>
 
-  </main>
+  <section class="gallery">
+    <h2>Meisterwerke unserer Kursteilnehmer</h2>
+    <img src="https://via.placeholder.com/200x200" alt="Ring 1">
+    <img src="https://via.placeholder.com/200x200" alt="Ring 2">
+    <img src="https://via.placeholder.com/200x200" alt="Ring 3">
+    <img src="https://via.placeholder.com/200x200" alt="Ring 4">
+    <img src="https://via.placeholder.com/200x200" alt="Ring 5">
+    <img src="https://via.placeholder.com/200x200" alt="Ring 6">
+  </section>
 
-  <footer class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <div>© Silberschmied Josef Ehehalt</div>
-      <div style="text-align:right;color:var(--muted)">Impressum · Datenschutz</div>
+  <section class="about">
+    <img src="https://via.placeholder.com/250x300" alt="Schmied">
+    <p>Die Werkstatt ist mit alten Werkzeugen und Maschinen ausgestattet, die Sepp mit viel Geschick und Leidenschaft bedient. Er verwendet nicht nur Silber, sondern auch Gold, Platin und Edelsteine. Kunden schätzen seine Handwerkskunst und Qualität.</p>
+  </section>
+
+  <footer>
+    <div>
+      <strong>Schreib mir einfach</strong><br>
+      per Mail, Instagram oder Ruf an
+    </div>
+    <div>
+      <strong>Rechtliches</strong><br>
+      <a href="#">Impressum</a>
+    </div>
+    <div>
+      <strong>Kontakt</strong><br>
+      09482 3442<br>
+      <a href="mailto:Silberschmiedsepp@gmail.com">Silberschmiedsepp@gmail.com</a><br>
+      Ettersdorf 24A, 93109 Wiesent
     </div>
   </footer>
-
 </body>
 </html>
