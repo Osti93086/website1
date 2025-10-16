@@ -80,22 +80,28 @@
       margin-bottom: 1rem;
     }
     .hero-text ul {
-      list-style: none;
-      margin-bottom: 1.5rem;
+    list-style: none;
+  margin-bottom: 1.5rem;
+  line-height: 2.5; /* erhöhten Zeilenabstand für Listenelemente */
+  padding-left: 0;
     }
     .hero-text li::before {
-      content: '✔';
-      color: var(--dark);
-      margin-right: 8px;
+     content: '✔';
+  margin-right: 8px;
+  color: var(--dark);
+
     }
     .hero-text a {
       display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--dark);
-      color: var(--light);
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s;
+  padding: 0.75rem 1.5rem;
+  background: var(--dark);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: default; /* kein Klick-Eindruck */
+  /* dauerhaft Hover-Stil */
+  background-color: var(--primary);
+  color: var(--dark);
     }
     .hero-text a:hover {
       background: var(--primary);
