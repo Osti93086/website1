@@ -11,6 +11,7 @@
       --light: #fff;
       --muted: #555;
       --accent: #7a7a7a;
+      --content-max: 1250px;
     }
     * {
       margin: 0;
@@ -23,13 +24,22 @@
       background-color: var(--light);
       line-height: 1.6;
     }
+    .container {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
     header {
+      background: var(--light);
+      border-bottom: 1px solid #ddd;
+    }
+    .header-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 5%;
-      background: var(--light);
-      border-bottom: 1px solid #ccc;
+      padding: 1.5rem 0;
+      max-width: var(--content-max);
+      margin: 0 auto;
     }
     header img {
       height: 60px;
@@ -40,7 +50,7 @@
       text-decoration: none;
       color: var(--dark);
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
     nav a:hover {
       color: var(--primary);
@@ -49,7 +59,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 4rem 5%;
+      padding: 4rem 0;
       background: var(--light);
     }
     .hero-text h1 {
@@ -72,7 +82,7 @@
       color: var(--light);
       border-radius: 6px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
     .hero-text a:hover {
       background: var(--primary);
@@ -82,35 +92,46 @@
       max-width: 350px;
       border-radius: 12px;
       box-shadow: 10px 10px 0 var(--accent);
+      margin-left: 2rem;
+      background: var(--light);
     }
     section.blue {
       background: var(--primary);
-      padding: 3rem 5%;
+      padding: 3rem 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       border-radius: 10px;
-      color: var(--dark);
+    }
+    section.blue .inside {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
     }
     section.blue img {
       width: 300px;
       border-radius: 10px;
       margin-right: 1.5rem;
       object-fit: cover;
+      background: #fff;
     }
     section.blue h2 {
       margin-bottom: 0.5rem;
       font-size: 1.6rem;
     }
-    .blue div {
+    section.blue div.text {
       max-width: 600px;
+    }
+    .blue.reverse .inside {
+      flex-direction: row-reverse;
     }
     .diy {
       text-align: center;
       background: #f4f4f4;
-      padding: 4rem 5%;
-      margin-bottom: 1rem;
+      padding: 4rem 0;
+      margin-bottom: 1.5rem;
     }
     .diy h2 {
       font-size: 2rem;
@@ -125,7 +146,12 @@
       max-width: 500px;
       width: 100%;
       border-radius: 8px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .diy .center-btn {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
     .diy button {
       background: var(--dark);
@@ -134,23 +160,19 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s ease;
+      font-size: 1.1rem;
+      transition: background 0.3s;
     }
     .diy button:hover {
       background: var(--primary);
       color: var(--dark);
     }
-    .diy div {
-      margin-top: 1rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      padding: 4rem 5%;
+      align-items: flex-start;
+      padding: 4rem 0;
       margin-bottom: 2rem;
     }
     .gallery h2 {
@@ -163,22 +185,26 @@
       margin-bottom: 1.5rem;
       border-radius: 8px;
       object-fit: cover;
+      background: #fff;
     }
     .about {
       background: var(--primary);
-      padding: 3rem 5%;
+      padding: 3rem 0;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+    .about .inside {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-      color: var(--dark);
+      max-width: 100%;
     }
     .about img {
       width: 250px;
       border-radius: 8px;
       margin-right: 1.5rem;
       object-fit: cover;
+      background: #fff;
     }
     .about p {
       max-width: 600px;
@@ -199,99 +225,101 @@
     footer a {
       color: var(--light);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
     footer a:hover {
       color: var(--primary);
     }
-    @media (max-width: 768px) {
-      .hero,
-      section.blue,
-      .about {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero img,
-      section.blue img,
-      .about img {
-        margin: 1rem 0;
-      }
-      .gallery img {
-        width: 48%;
-      }
+    @media (max-width: 1300px) {
+      .container { padding: 0 1rem; }
+    }
+    @media (max-width: 900px) {
+      .hero, section.blue .inside, .about .inside { flex-direction: column; text-align: center; }
+      .hero img, section.blue img, .about img { margin: 1.5rem auto 0 auto; }
+      .gallery img { width: 48%; }
+      .hero img, section.blue img, .about img { max-width: 100%; }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="githubtest/logo.png" alt="Logo" />
-    <nav>
-      <a href="#kontakt">Kontakt</a>
-      <a href="#home">Home</a>
-    </nav>
+    <div class="header-row container">
+      <img src="githubtest/logo.png" alt="Logo" />
+      <nav>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#home">Home</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-text">
-      <h1>Silberschmied Josef Ehehalt</h1>
-      <ul>
-        <li>Schmuck selbst schmieden</li>
-        <li>DIY Ring Workshop</li>
-        <li>Selbstgemacht für deine Liebsten</li>
-      </ul>
-      <a href="#">Individuell handgefertigte Ringe</a>
-    </div>
-    <img src="githubtest/hero_rings.png" alt="Ringe" />
-  </section>
+  <div class="container">
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Silberschmied Josef Ehehalt</h1>
+        <ul>
+          <li>Schmuck selbst schmieden</li>
+          <li>DIY Ring Workshop</li>
+          <li>Selbstgemacht für deine Liebsten</li>
+        </ul>
+        <a href="#">Individuell handgefertigte Ringe</a>
+      </div>
+      <img src="githubtest/hero_rings.png" alt="Ringe" />
+    </section>
 
-  <section class="blue" id="servus">
-    <img src="githubtest/sepp_workshop.png" alt="Schmied" />
-    <div>
-      <h2>Servus</h2>
+    <section class="blue">
+      <div class="inside">
+        <img src="githubtest/sepp_workshop.png" alt="Schmied" />
+        <div class="text">
+          <h2>Servus</h2>
+          <p>
+            Ich bin der Sepp, leidenschaftlicher Künstler mit jahrelanger Erfahrung. Ich mache Schmuck aus 100% Handarbeit. Jedes Stück ist ein Unikat und entsteht mit Liebe zum Detail.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="blue reverse">
+      <div class="inside">
+        <img src="githubtest/materials_table.jpg" alt="Werkbank" />
+        <div class="text">
+          <h2>Die Herstellung</h2>
+          <p>
+            Mithilfe traditioneller Verfahren und Werkzeuge werden die Ringe gefertigt. Alle meine Ringe sind Einzelstücke und können nach deinen eigenen Wünschen angepasst werden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="diy">
+      <h2>Do-it-yourself</h2>
       <p>
-        Ich bin der Sepp, leidenschaftlicher Künstler mit jahrelanger Erfahrung. Ich mache Schmuck aus 100% Handarbeit. Jedes Stück ist ein Unikat und entsteht
-        mit Liebe zum Detail.
+        Stellen Sie gemeinsam mit mir ein einzigartiges Schmuckstück her. Lernen Sie mein Handwerk kennen und erschaffen Sie Ihr eigenes Unikat.
       </p>
-    </div>
-  </section>
+      <img src="githubtest/anvil_tool.webp" alt="Werkzeug" />
+      <div class="center-btn">
+        <button>Anrufen</button>
+      </div>
+      <div>
+        keine Preise nur Spenden &middot; Garantiertes Ergebnis &middot; Ohne Vorkenntnisse
+      </div>
+    </section>
 
-  <section class="blue" id="herstellung" style="flex-direction: row-reverse;">
-    <div>
-      <h2>Die Herstellung</h2>
-      <p>
-        Mithilfe traditioneller Verfahren und Werkzeuge werden die Ringe gefertigt. Alle meine Ringe sind Einzelstücke und können nach deinen eigenen Wünschen
-        angepasst werden.
-      </p>
-    </div>
-    <img src="githubtest/materials_table.jpg" alt="Werkbank" />
-  </section>
+    <section class="gallery">
+      <h2>Meisterwerke unserer Kursteilnehmer</h2>
+      <img src="githubtest/gallery_ring1.png" alt="Ring 1" />
+      <img src="githubtest/gallery_ring2.png" alt="Ring 2" />
+      <img src="githubtest/gallery_ring3.png" alt="Ring 3" />
+    </section>
 
-  <section class="diy">
-    <h2>Do-it-yourself</h2>
-    <p>
-      Stellen Sie gemeinsam mit mir ein einzigartiges Schmuckstück her. Lernen Sie mein Handwerk kennen und erschaffen Sie Ihr eigenes Unikat.
-    </p>
-    <img src="githubtest/anvil_tool.webp" alt="Werkzeug" />
-    <button>Anrufen</button>
-    <div>
-      keine Preise nur Spenden &middot; Garantiertes Ergebnis &middot; Ohne Vorkenntnisse
-    </div>
-  </section>
-
-  <section class="gallery">
-    <h2>Meisterwerke unserer Kursteilnehmer</h2>
-    <img src="githubtest/gallery_ring1.png" alt="Ring 1" />
-    <img src="githubtest/gallery_ring2.png" alt="Ring 2" />
-    <img src="githubtest/gallery_ring3.png" alt="Ring 3" />
-  </section>
-
-  <section class="about" id="kontakt">
-    <img src="githubtest/sepp_portrait.png" alt="Schmied" />
-    <p>
-      Die Werkstatt ist mit alten Werkzeugen und Maschinen ausgestattet, die Sepp mit viel Geschick und Leidenschaft bedient. Er verwendet nicht nur Silber, sondern
-      auch Gold, Platin und Edelsteine. Kunden schätzen seine Handwerkskunst und Qualität.
-    </p>
-  </section>
+    <section class="about" id="kontakt">
+      <div class="inside">
+        <img src="githubtest/sepp_portrait.png" alt="Schmied" />
+        <p>
+          Die Werkstatt ist mit alten Werkzeugen und Maschinen ausgestattet, die Sepp mit viel Geschick und Leidenschaft bedient. Er verwendet nicht nur Silber, sondern auch Gold, Platin und Edelsteine. Kunden schätzen seine Handwerkskunst und Qualität.
+        </p>
+      </div>
+    </section>
+  </div>
 
   <footer>
     <div>
@@ -311,4 +339,3 @@
   </footer>
 </body>
 </html>
-
