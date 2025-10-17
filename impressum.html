@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum – Silberschmied Josef Ehehalt</title>
+  <style>
+    :root {
+      --primary: #a0d8ff;
+      --dark: #222;
+      --light: #fff;
+      --muted: #555;
+      --accent: #7a7a7a;
+      --content-max: 1250px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.6;
+    }
+    h1 { font-size: 48px; margin-bottom: 1.5rem; font-weight: normal; }
+    .container {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    header {
+      background: var(--light);
+      border-bottom: 1px solid #ddd;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    header img {
+      height: 60px;
+      width: auto;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    main {
+      padding: 4rem 0 2rem 0;
+    }
+    .impressum-box {
+      background: var(--primary);
+      border-radius: 10px;
+      padding: 3rem 4rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(160,216,255,0.04);
+    }
+    .impressum-box p { margin-bottom: 1.1rem; }
+    .impressum-box strong { font-weight: 600; }
+    .impressum-box a { color: var(--dark); text-decoration: underline; }
+    footer {
+      background: var(--dark);
+      color: var(--light);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 2rem 5%;
+      font-size: 0.9rem;
+    }
+    footer div { flex: 1 1 200px; margin-bottom: 1rem; }
+    footer a {
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover { color: var(--primary); }
+    @media (max-width: 900px) {
+      .container { padding: 0 1rem; }
+      .header-row { flex-direction: column; gap: 1.5rem; }
+      .impressum-box { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-row container">
+      <img src="githubtest/logo.png" alt="Logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="impressum.html">Impressum</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <div class="impressum-box">
+      <h1>Impressum</h1>
+      <p><strong>Silberschmiedeprojekt</strong><br>
+      Josef Ehehalt<br>
+      Ettersdorf 24A<br>
+      93109 Wiesent<br>
+      Deutschland</p>
+      <p>
+        <strong>Kontakt:</strong><br>
+        Telefon: 09482 3442<br>
+        E-Mail: <a href
