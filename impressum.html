@@ -124,7 +124,8 @@
   <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für externe Links.<br>
   Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
 
-<footer>
+
+<footer class="footer-fixed">
   <div>
     <strong>Schreib mir einfach</strong><br />
     per Mail, Instagram oder Ruf an
@@ -142,7 +143,7 @@
 </footer>
 
 <style>
-  footer {
+  .footer-fixed {
     background: #222;
     color: #fff;
     display: flex;
@@ -150,24 +151,37 @@
     flex-wrap: wrap;
     padding: 2rem 5%;
     font-size: 0.9rem;
+    width: 100%;
+    position: relative; /* Relative, damit immer unter dem Impressumsinhalt steht */
+    margin-top: 3rem; /* Abstand zum Inhalt */
   }
-  footer div {
+
+  .footer-fixed div {
     flex: 1 1 200px;
     margin-bottom: 1rem;
   }
-  footer a {
+
+  .footer-fixed a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
   }
-  footer a:hover {
-    color: #a0d8ff;
+
+  .footer-fixed a:hover {
+    color: #a0d8ff; /* Sichtbare, helle Hover-Farbe */
   }
+
+  /* sicherstellen, dass der Text immer sichtbar bleibt */
+  .footer-fixed a, .footer-fixed strong {
+    visibility: visible;
+    opacity: 1;
+  }
+
   @media (max-width: 900px) {
-    footer {
+    .footer-fixed {
       flex-direction: column;
       text-align: center;
     }
   }
 </style>
-
+    
