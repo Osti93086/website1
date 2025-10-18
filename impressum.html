@@ -13,18 +13,32 @@
       --accent: #7a7a7a;
       --content-max: 1250px;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--dark);
       background-color: var(--light);
       line-height: 1.6;
     }
-    h1 { font-size: 48px; margin-bottom: 1.5rem; font-weight: normal; }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 1.5rem;
+      font-weight: normal;
+    }
     .container {
       max-width: var(--content-max);
       margin: 0 auto;
       padding: 0 2rem;
+      flex: 1;
     }
     header {
       background: var(--light);
@@ -60,11 +74,19 @@
       border-radius: 10px;
       padding: 3rem 4rem;
       margin-bottom: 2rem;
-      box-shadow: 0 2px 8px rgba(160,216,255,0.04);
+      box-shadow: 0 2px 8px rgba(160,216,255,0.05);
     }
-    .impressum-box p { margin-bottom: 1.1rem; }
-    .impressum-box strong { font-weight: 600; }
-    .impressum-box a { color: var(--dark); text-decoration: underline; }
+    .impressum-box p {
+      margin-bottom: 1.1rem;
+    }
+    .impressum-box strong {
+      font-weight: 600;
+    }
+    .impressum-box a {
+      color: var(--dark);
+      text-decoration: underline;
+    }
+
     footer {
       background: var(--dark);
       color: var(--light);
@@ -73,18 +95,37 @@
       flex-wrap: wrap;
       padding: 2rem 5%;
       font-size: 0.9rem;
+      width: 100%;
+      margin-top: auto; /* bleibt unten */
     }
-    footer div { flex: 1 1 200px; margin-bottom: 1rem; }
+    footer div {
+      flex: 1 1 200px;
+      margin-bottom: 1rem;
+    }
     footer a {
       color: var(--light);
       text-decoration: none;
       transition: color 0.3s;
     }
-    footer a:hover { color: var(--primary); }
+    footer a:hover {
+      color: var(--primary);
+    }
+
     @media (max-width: 900px) {
-      .container { padding: 0 1rem; }
-      .header-row { flex-direction: column; gap: 1.5rem; }
-      .impressum-box { padding: 2rem 1rem; }
+      .container {
+        padding: 0 1rem;
+      }
+      .header-row {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .impressum-box {
+        padding: 2rem 1rem;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -98,6 +139,7 @@
       </nav>
     </div>
   </header>
+
   <main class="container">
     <div class="impressum-box">
       <h1>Impressum</h1>
@@ -106,82 +148,45 @@
       Ettersdorf 24A<br>
       93109 Wiesent<br>
       Deutschland</p>
-      <p>
-        <strong>Kontakt:</strong><br>
-        Telefon: 09482 3442<br>
-        E-Mail:Silberschmiedsepp@gmail.com <a href
-                                             <h2>Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV:</h2>
-  <p>Josef Ehehalt<br>
-  Ettersdorf 24A<br>
-  93109 Wiesent</p>
 
-  <h2>Hinweis zur Gemeinnützigkeit</h2>
-  <p>Diese Website dient der privaten, nicht-kommerziellen Präsentation eines handwerklichen Silberschmiedeprojekts.<br>
-  Das Projekt wird ehrenamtlich betrieben und verfolgt keine kommerziellen Zwecke.<br>
-  Es werden ausschließlich freiwillige Spenden ohne Gegenleistung entgegengenommen.</p>
+      <p><strong>Kontakt:</strong><br>
+      Telefon: 09482 3442<br>
+      E-Mail: <a href="mailto:Silberschmiedsepp@gmail.com">Silberschmiedsepp@gmail.com</a>
+      </p>
 
-  <h2>Haftungsausschluss</h2>
-  <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für externe Links.<br>
-  Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+      <h2>Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV:</h2>
+      <p>Josef Ehehalt<br>
+      Ettersdorf 24A<br>
+      93109 Wiesent</p>
 
+      <h2>Hinweis zur Gemeinnützigkeit</h2>
+      <p>Diese Website dient der privaten, nicht-kommerziellen Präsentation eines handwerklichen Silberschmiedeprojekts.<br>
+      Das Projekt wird ehrenamtlich betrieben und verfolgt keine kommerziellen Zwecke.<br>
+      Es werden ausschließlich freiwillige Spenden ohne Gegenleistung entgegengenommen.</p>
 
-<footer class="footer-fixed">
-  <div>
-    <strong>Schreib mir einfach</strong><br />
-    per Mail, Instagram oder Ruf an
-  </div>
-  <div>
-    <strong>Rechtliches</strong><br />
-    <a href="impressum.html">Impressum</a>
-  </div>
-  <div>
-    <strong>Kontakt</strong><br />
-    09482 3442<br />
-    <a href="mailto:Silberschmiedsepp@gmail.com">Silberschmiedsepp@gmail.com</a><br />
-    Ettersdorf 24A, 93109 Wiesent
-  </div>
-</footer>
+      <h2>Haftungsausschluss</h2>
+      <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für externe Links.<br>
+      Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+    </div>
+  </main>
 
-<style>
-  .footer-fixed {
-    background: #222;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 2rem 5%;
-    font-size: 0.9rem;
-    width: 100%;
-    position: relative; /* Relative, damit immer unter dem Impressumsinhalt steht */
-    margin-top: 3rem; /* Abstand zum Inhalt */
-  }
+  <footer>
+    <div>
+      <strong>Schreib mir einfach</strong><br />
+      per Mail, Instagram oder Ruf an
+    </div>
+    <div>
+      <strong>Rechtliches</strong><br />
+      <a href="impressum.html">Impressum</a>
+    </div>
+    <div>
+      <strong>Kontakt</strong><br />
+      09482 3442<br />
+      <a href="mailto:Silberschmiedsepp@gmail.com">Silberschmiedsepp@gmail.com</a><br />
+      Ettersdorf 24A, 93109 Wiesent
+    </div>
+  </footer>
+</body>
+</html>
 
-  .footer-fixed div {
-    flex: 1 1 200px;
-    margin-bottom: 1rem;
-  }
-
-  .footer-fixed a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .footer-fixed a:hover {
-    color: #a0d8ff; /* Sichtbare, helle Hover-Farbe */
-  }
-
-  /* sicherstellen, dass der Text immer sichtbar bleibt */
-  .footer-fixed a, .footer-fixed strong {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  @media (max-width: 900px) {
-    .footer-fixed {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-</style>
     
