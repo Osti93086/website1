@@ -124,7 +124,7 @@
   <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für externe Links.<br>
   Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
 
-          <footer>
+<footer>
   <div>
     <strong>Schreib mir einfach</strong><br />
     per Mail, Instagram oder Ruf an
@@ -140,3 +140,34 @@
     Ettersdorf 24A, 93109 Wiesent
   </div>
 </footer>
+
+<style>
+  footer {
+    background: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+  }
+  footer div {
+    flex: 1 1 200px;
+    margin-bottom: 1rem;
+  }
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  footer a:hover {
+    color: #a0d8ff;
+  }
+  @media (max-width: 900px) {
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
