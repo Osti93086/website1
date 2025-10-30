@@ -163,6 +163,11 @@
     footer a { color: var(--light); text-decoration: none; transition: color 0.3s; }
     footer a:hover { color: var(--primary); }
 
+    /* Instagram-Link hellblau (überschreibt footer a) */
+    footer a[href*="instagram"] {
+      color: var(--primary);
+    }
+
     @media (max-width: 1300px) { .container { padding: 0 1rem; } }
     @media (max-width: 900px) {
       .hero, section.blue .inside, .about .inside { flex-direction: column; text-align: center; }
@@ -170,6 +175,21 @@
       section.blue .inside, .about .inside { padding: 0; }
       section.blue img, .about img { margin: 1.5rem auto 0 auto; }
       .gallery-section { padding: 0 1rem; }
+
+     /* Mobile: H2 in .blue zentrieren und skalieren, verhindern dass es aus dem Bildschirm läuft */
+     section.blue div.text h2 {
+       padding: 0;
+       text-align: center;
+       font-size: 1.25rem;
+       line-height: 1.2;
+       overflow-wrap: break-word;
+       word-break: break-word;
+       white-space: normal;
+     }
+     section.blue div.text p {
+       padding-left: 0;
+       padding-right: 0;
+     }
     }
     @media (max-width:480px){
       .header-row{padding:.5rem 0}
@@ -179,6 +199,11 @@
       .container{padding:0 .75rem}
       footer{font-size:.85rem;padding:1.25rem 4%}
       .btn-phone{width:100%;display:inline-block;text-align:center;padding:.75rem 1rem}
+
+     /* noch kleinere Schrift für sehr schmale Geräte */
+     section.blue div.text h2 {
+       font-size: 1.05rem;
+     }
     }
   </style>
 </head>
